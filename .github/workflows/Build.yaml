@@ -27,7 +27,7 @@ jobs:
         echo "export WATCOM_FPU=287" >> $GITHUB_ENV
 
     - name: Check ld32 version
-      run: ls open-watcom/lbin
+      run: ls ./open-watcom
 
     # Additional steps for testing or other tasks
     # Add any additional steps here as needed
