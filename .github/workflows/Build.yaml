@@ -18,16 +18,19 @@ jobs:
     - name: Make Open Watcom executable
       run: chmod +x open-watcom
 
+    - name: List Open Watcom directory contents
+      run: ls -R open-watcom
+
     - name: Set up Open Watcom environment variables
       run: |
-        echo "export PATH=\$PATH:\$GITHUB_WORKSPACE" >> $GITHUB_ENV
-        echo "export WATCOM=\$GITHUB_WORKSPACE" >> $GITHUB_ENV
+        echo "export PATH=\$PATH:\$GITHUB_WORKSPACE/open-watcom" >> $GITHUB_ENV
+        echo "export WATCOM=\$GITHUB_WORKSPACE/open-watcom" >> $GITHUB_ENV
         echo "export EDPATH=\$WATCOM/eddat" >> $GITHUB_ENV
         echo "export INCLUDE=\$WATCOM/h" >> $GITHUB_ENV
         echo "export WATCOM_FPU=287" >> $GITHUB_ENV
 
     - name: Check ld32 version
-      run: ls ./open-watcom
+      run: open-watcom/binl/ld32 --version
 
     # Additional steps for testing or other tasks
     # Add any additional steps here as needed
