@@ -25,3 +25,9 @@ Running code
 You can run Makefile process by following process:
 
 `make`
+
+### Github Actions
+
+To build this project using github actions you need first download repository using following command:
+
+`git clone`
