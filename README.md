@@ -32,11 +32,11 @@ Process to install depedencies you can find here: https://github.com/nanobyte-de
 
 To build this project using github actions you need first download this repository and publish it as private or public repository using following command:
 
-`git clonehttps://github.com/CodeWizard100/CodeWizardOS.git`
+`git clone https://github.com/CodeWizard100/CodeWizardOS.git`
 
 or you can just download and unpack zip file.
 
 Next you need to just build it creating new action.
 
-Building using gothub actions can take one to two minutes
+Building using github actions can take one to two minutes
 
