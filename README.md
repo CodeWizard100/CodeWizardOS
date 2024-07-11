@@ -16,12 +16,12 @@ Makefile building is very fast and very easy to use
 
 Requirments
 
-You need obnly make that can be installed followed command:
+You need only make package that can be installed followed command:
 
 `sudo apt install make`
 
 Running code
 
-You can run makefile procces by following process:
+You can run Makefile process by following process:
 
 `make`
