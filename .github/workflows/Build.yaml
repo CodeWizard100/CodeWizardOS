@@ -10,7 +10,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Checkout code
+    - name: Install depedencies
       run: sudo apt-get install qemu-system-x86 make nasm bochs-x bochsbios vgabios
 
     - name: Set up Open Watcom
