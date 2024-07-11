@@ -26,7 +26,7 @@ You can run Makefile process by following process:
 
 `make`
 
-Process to install depedencies you can find here: 
+Process to install depedencies you can find here: https://github.com/nanobyte-dev/nanobyte_os/tree/videos/part5
 
 ### Github Actions
 
