@@ -16,4 +16,4 @@ jobs:
         version: '2.0'  # specify the version of Open Watcom to use
 
     - name: Check ld32 version
-      run: ld32 --version
+      run: ls usr/bin/watcom
