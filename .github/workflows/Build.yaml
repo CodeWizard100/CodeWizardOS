@@ -8,4 +8,5 @@ jobs:
   test_pull_request:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
       - uses: actions/checkout@v2
