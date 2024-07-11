@@ -8,7 +8,7 @@ This project is based on nanobyte os https://github.com/nanobyte-dev/nanobyte_os
 This project is licensed under the Unlicense. See the license https://github.com/CodeWizard100/CodeWizardOS/blob/main/LICENSE file for more details
 
 ## Building
-Thos project can be builded in github actions or makefile.
+Thos project can be builded using github actions or makefile.
 
 Makefile:
 
