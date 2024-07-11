@@ -26,6 +26,8 @@ You can run Makefile process by following process:
 
 `make`
 
+Process to install depedencies you can find here: 
+
 ### Github Actions
 
 To build this project using github actions you need first download this repository and publish it as private or public repository using following command:
@@ -34,5 +36,7 @@ To build this project using github actions you need first download this reposito
 
 or you can just download and unpack zip file.
 
+Next you need to just build it creating new action.
 
+Building using gothub actions can take to one to two minutes
 
