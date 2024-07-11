@@ -1,36 +1,14 @@
 name: Run build
 
 on: [push]
-
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      steps:
+    - uses: actions/checkout@v2
+    - uses: open-watcom/setup-watcom@v0
+  with:
+      version: "2.0"
+    - run: |
+      wcl386 --version
 
-    - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y wget
-
-    - name: Download Open Watcom
-      run: wget https://github.com/open-watcom/open-watcom-v2/releases/download/Current-build/open-watcom-2_0-c-linux-x64 -O open-watcom
-
-    - name: Make Open Watcom executable
-      run: chmod +x open-watcom
-
-    - name: List Open Watcom directory contents
-      run: ls -R open-watcom
-
-    - name: Set up Open Watcom environment variables
-      run: |
-        echo "export PATH=\$PATH:\$GITHUB_WORKSPACE/open-watcom" >> $GITHUB_ENV
-        echo "export WATCOM=\$GITHUB_WORKSPACE/open-watcom" >> $GITHUB_ENV
-        echo "export EDPATH=\$WATCOM/eddat" >> $GITHUB_ENV
-        echo "export INCLUDE=\$WATCOM/h" >> $GITHUB_ENV
-        echo "export WATCOM_FPU=287" >> $GITHUB_ENV
-
-    - name: Check ld32 version
-      run: open-watcom/open-watcom
-
-    # Additional steps for testing or other tasks
-    # Add any additional steps here as needed
