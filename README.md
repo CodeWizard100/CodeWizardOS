@@ -38,5 +38,5 @@ or you can just download and unpack zip file.
 
 Next you need to just build it creating new action.
 
-Building using gothub actions can take to one to two minutes
+Building using gothub actions can take one to two minutes
 
