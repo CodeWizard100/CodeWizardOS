@@ -28,6 +28,11 @@ You can run Makefile process by following process:
 
 ### Github Actions
 
-To build this project using github actions you need first download repository using following command:
+To build this project using github actions you need first download this repository and publish it as private or public repository using following command:
 
-`git clone`
+`git clone https://github.com/CodeWizard100/CodeWizardOS.git`
+
+or you can just download and unpack zip file.
+
+
+
