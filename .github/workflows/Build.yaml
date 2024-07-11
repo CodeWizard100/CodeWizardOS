@@ -9,7 +9,28 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-   
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y wget tar
+
+    - name: Download Open Watcom
+      run: wget https://github.com/open-watcom/open-watcom-v2/releases/download/Current-build/open-watcom-linux-x64.2_0c.7z -O open-watcom.7z
+
+    - name: Install p7zip to extract .7z files
+      run: sudo apt-get install -y p7zip-full
+
+    - name: Extract Open Watcom
+      run: 7z x open-watcom.7z -oopen-watcom
+
+    - name: Set up Open Watcom environment variables
+      run: |
+        echo "export PATH=\$PATH:\$GITHUB_WORKSPACE/open-watcom/binl" >> $GITHUB_ENV
+        echo "export WATCOM=\$GITHUB_WORKSPACE/open-watcom" >> $GITHUB_ENV
+        echo "export EDPATH=\$WATCOM/eddat" >> $GITHUB_ENV
+        echo "export INCLUDE=\$WATCOM/h" >> $GITHUB_ENV
+        echo "export WATCOM_FPU=287" >> $GITHUB_ENV
+
+    - name: Check ld32 version
+      run: ld32 --version
 
     # Additional steps for testing or other tasks
     # Add any additional steps here as needed
