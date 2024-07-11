@@ -10,7 +10,7 @@ This project is licensed under the Unlicense. See the license https://github.com
 ## Building
 Thos project can be builded using github actions or makefile.
 
-Makefile:
+### Makefile
 
 Makefile building is very fast and very easy to use
 
