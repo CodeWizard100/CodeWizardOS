@@ -16,6 +16,10 @@ void getinput() {
     if (inportb(0x64) & 0x1) {
       puts("I think you clicked something");
     }
+    else {
+      if (inportb(0x64)) {puts("ok");}
+      else {if (0x1) { puts("okok"); } else { puts("okokok"); }}
+    }
   }
 }
 
