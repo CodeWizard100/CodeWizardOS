@@ -4,7 +4,6 @@
 #include "system.h"
 #include "stdint.h"
 #include "stdio.h"
-#include "dos.h" // for delay()
 
 void getinput() {
   uint8_t reading = 1;
@@ -20,7 +19,7 @@ void getinput() {
     } else {
       puts("No data yet");
     }
-    delay(100); // Add a short delay to avoid flooding the output
+    
   }
 }
 
