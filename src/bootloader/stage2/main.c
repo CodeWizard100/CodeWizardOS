@@ -13,7 +13,7 @@ uint8_t inportb(uint16_t port) {
         value [al];
 
     // Call the inline assembly function
-    inportb(port);
+   
 
     // Return the value read from the port
     return value;
