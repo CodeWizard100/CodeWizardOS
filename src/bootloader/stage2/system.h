@@ -3,13 +3,13 @@
 
 #include "types.h"
 
-uint8 inportb(uint16 _port) {
+static inline uint8 inportb(uint16 _port) {
     uint8 rv;
     __asm__ volatile ("inb %1, %0" : "=a" (rv) : "dN" (_port));
     return rv;
 }
 
-void outportb(uint16 _port, uint8 _data) {
+static inline void outportb(uint16 _port, uint8 _data) {
     __asm__ volatile ("outb %1, %0" : : "dN" (_port), "a" (_data));
 }
 
