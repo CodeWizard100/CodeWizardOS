@@ -2,11 +2,11 @@
 #include "stdio.h"
 
 // Function to read a byte from an I/O port using Watcom inline assembly
-uint8_t inportb1(uint16_t port) {
+uint8_t inportb(uint16_t port) {
     uint8_t value;
 
     // Use #pragma aux to define inline assembly block
-    #pragma aux inportb = \
+    #pragma aux inport = \
         "in al, dx"   /* Assembly instruction to read from port */ \
         "mov byte ptr [value], al" /* Move result to value */ \
         parm [dx] \
