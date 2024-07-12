@@ -2,9 +2,7 @@
 #define KEYBOARD_H
 
 #include "system.h"
-
 #include "stdint.h"
-
 #include "stdio.h"
 
 void getinput() {
@@ -16,7 +14,7 @@ void getinput() {
   while(reading)
   {
     if (inportb(0x64) & 0x1) {
-      puts("I think ypu clicked something");
+      puts("I think you clicked something");
     }
   }
 }
