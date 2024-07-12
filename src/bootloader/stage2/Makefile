@@ -2,7 +2,7 @@ BUILD_DIR?=build/
 ASM?=nasm
 ASMFLAGS?=-f obj
 CC16?=/home/runner/watcom/binl/wcc
-CFLAGS16?=-4 -d3 -s -wx -ms -zl -zq # -oneatxzh 
+CFLAGS16?=-std=gnu99 -4 -d3 -s -wx -ms -zl -zq  # -oneatxzh
 LD16?=/home/runner/watcom/binl/wlink
 
 SOURCES_C=$(wildcard *.c)
