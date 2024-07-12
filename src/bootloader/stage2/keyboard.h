@@ -3,6 +3,8 @@
 
 #include "system.h"
 
+#include "stdint.h"
+
 char* getinput() {
   char buff;
   char* buffstr;
