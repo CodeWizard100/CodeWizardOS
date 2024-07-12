@@ -1,16 +1,23 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
-#include "types.h"
+#include "stdint.h"
 
-static inline uint8 inportb(uint16 _port) {
-    uint8 rv;
-    __asm__ volatile ("inb %1, %0" : "=a" (rv) : "dN" (_port));
-    return rv;
-}
+uint8_t inportb(uint16_t port) {
+    uint8_t value;
 
-static inline void outportb(uint16 _port, uint8 _data) {
-    __asm__ volatile ("outb %1, %0" : : "dN" (_port), "a" (_data));
+    // Use #pragma aux to define inline assembly block
+    #pragma aux inport = \
+        "in al, dx"   /* Assembly instruction to read from port */ \
+        "mov byte ptr [value], al" /* Move result to value */ \
+        parm [dx] \
+        value [al];
+
+    // Call the inline assembly function
+   
+
+    // Return the value read from the port
+    return value;
 }
 
 #endif // SYSTEM_H
