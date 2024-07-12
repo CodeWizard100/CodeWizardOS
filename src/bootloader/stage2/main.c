@@ -1,6 +1,6 @@
 #include "stdint.h"
 #include "stdio.h"
-#include "system.h"
+#include "keyboard.h"
 
 void _cdecl cstart_(uint16_t bootDrive)
 {
@@ -8,4 +8,7 @@ void _cdecl cstart_(uint16_t bootDrive)
 
     puts("Hello world from C!\r\n");
 
+   while (1) {
+    getinput();
+  }
 }
