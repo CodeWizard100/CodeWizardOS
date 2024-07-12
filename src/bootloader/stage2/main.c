@@ -4,8 +4,8 @@
 // Symulacja funkcji inportb (dla celów tego przykładu)
 uint8_t inportb(uint16_t port) {
     // Kod symulujący zwrócenie kodu skanowania klawiatury
-    // Możesz dostosować tę funkcję do rzeczywistych warunków pracy
-    static uint8_t simulated_input[] = {0x02, 0x00}; // 0x02 to przykładowy kod skanowania dla klawisza '1'
+    // Na przykład dla klawisza '1' można użyć wartości odpowiadającej jego kodowi skanowania
+    static uint8_t simulated_input[] = {0x02, 0x00}; // 0x02 to kod skanowania dla '1'
     static int index = 0;
 
     if (port == 0x60) {
@@ -13,7 +13,8 @@ uint8_t inportb(uint16_t port) {
         return simulated_input[index++ % 2];
     } else if (port == 0x64) {
         // Zwraca 1, aby wskazać, że jest dane do odczytania
-        return 0x1;
+        // co każde drugie wywołanie symuluje brak danych wejściowych
+        return (index % 2 == 0) ? 0x1 : 0x0;
     }
     return 0;
 }
