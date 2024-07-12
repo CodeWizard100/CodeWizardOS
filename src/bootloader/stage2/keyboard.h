@@ -10,11 +10,11 @@ void getinput() {
 
   while (reading) {
     uint8_t status = inportb(0x64);
-    printf("Status port: 0x64 = %x\n", status); // Print the status port value
+    printf("Status port: 0x64 = %x\r\n", status); // Print the status port value
 
     if (status & 0x1) {
       uint8_t scancode = inportb(0x60);
-      printf("Scancode: %x\n", scancode);
+      printf("Scancode: %x\r\n", scancode);
       reading = 0; // Exit after reading one key press
     } else {
       puts("No data yet");
