@@ -4,22 +4,23 @@
 #include "system.h"
 #include "stdint.h"
 #include "stdio.h"
+#include "dos.h" // for delay()
 
 void getinput() {
-  char buff;
-  char* buffstr;
-  uint8_t i = 0;
   uint8_t reading = 1;
 
-  while(reading)
-  {
-    if (inportb(0x64) & 0x1) {
-      puts("I think you clicked something");
+  while (reading) {
+    uint8_t status = inportb(0x64);
+    printf("Status port: 0x64 = %x\n", status); // Print the status port value
+
+    if (status & 0x1) {
+      uint8_t scancode = inportb(0x60);
+      printf("Scancode: %x\n", scancode);
+      reading = 0; // Exit after reading one key press
+    } else {
+      puts("No data yet");
     }
-    else {
-      if (inportb(0x64)) {puts("ok\r\n");}
-      else {if (0x1) { puts("okok\r\n"); } else { puts("okokok\r\n"); }}
-    }
+    delay(100); // Add a short delay to avoid flooding the output
   }
 }
 
