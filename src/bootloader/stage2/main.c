@@ -7,9 +7,9 @@ void _cdecl cstart_(uint16_t bootDrive)
 
     puts("Hello world from C!\r\n");
     
-    char* vid = (char*)0xB8000;
+    char* vidmem = (char*)0xB8000;
 
-    vid[0] = 'A';
+    vidmem[0] = 'A';
 
-    vid[1] = 0x07;
+    vidmem[1] = 0x07;
 }
