@@ -20,4 +20,12 @@ uint8_t inportb(uint16_t port) {
     return value;
 }
 
+void outportb(uint16_t port, uint8_t data) {
+  // Function definition using Watcom      inline assembly
+  #pragma aux outportb = \
+    "out dx, al"   /* Assembly   instruction to write to port */ \
+    parm [dx] [al];
+}
+
+
 #endif // SYSTEM_H
