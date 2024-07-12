@@ -1,4 +1,4 @@
-#indef TYPES_H
+#ifndef TYPES_H
 #define TYPES_H
 
 typedef signed char int8;
