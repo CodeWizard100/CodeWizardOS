@@ -1,13 +1,19 @@
 #include "stdint.h"
 #include "stdio.h"
 
-// Function to read a byte from an I/O port
+// Function to read a byte from an I/O port using Watcom inline assembly
 uint8_t inportb(uint16_t port) {
-    // Declare a variable to hold the value read from the port
     uint8_t value;
 
-    // Perform the input operation using inline assembly
-    asm volatile ("inb %1, %0" : "=a" (value) : "dN" (port));
+    // Use #pragma aux to define inline assembly block
+    #pragma aux inportb = \
+        "in al, dx"   /* Assembly instruction to read from port */ \
+        "mov byte ptr [value], al" /* Move result to value */ \
+        parm [dx] \
+        value [al];
+
+    // Call the inline assembly function
+    inportb(port);
 
     // Return the value read from the port
     return value;
