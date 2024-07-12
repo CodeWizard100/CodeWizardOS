@@ -17,7 +17,7 @@ void getinput() {
       printf("Scancode: %x\r\n", scancode);
       reading = 0; // Exit after reading one key press
     } else {
-      puts("No data yet");
+      puts("No data yet\r\n");
     }
     
   }
