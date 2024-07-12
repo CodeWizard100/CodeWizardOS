@@ -23,3 +23,9 @@ jobs:
 
     - name: Run QEMU
       run: timeout 10 qemu-system-x86_64 -fda build/main_floppy.img -nographic || true
+    
+    - name: Upload image
+    uses: actions/upload-artifact@v4
+    with:
+      name: Image
+      path: build/main_floppy.img
