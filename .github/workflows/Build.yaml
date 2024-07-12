@@ -22,4 +22,4 @@ jobs:
       run: make
 
     - name: Run QEMU
-      run: timeout 10 qemu-system-x86_64 -fda build/qemu-system-x86_64.img -nographic || true
+      run: timeout 10 qemu-system-x86_64 -fda build/main_floppy.img -nographic || true
